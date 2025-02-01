@@ -30,6 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+
 }
 
 ul li {
@@ -49,6 +50,7 @@ ul li {
   position: absolute;
   font-size: 18px;
   display: none;
+  animation: slideIn 0.8s;
 }
 
 .home-tooltip {
@@ -76,6 +78,7 @@ ul li {
   background-color: black;
   width: 30px;
   height: 14px;
+  
 }
 
 .home-tooltip::before {
@@ -97,4 +100,17 @@ ul li {
 .projects-link:hover~.projects-tooltip,
 .blog-link:hover~.blog-tooltip {
   display: block;
+}
+
+/* Animation */
+
+@keyframes slideIn {
+ 0% {
+    top: -10%;
+    opacity: 0;
+  }
+ 100%{
+    top: 0%;
+    opacity: 1;
+  }
 }
