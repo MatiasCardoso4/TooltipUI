@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip-container {
+
+  width: 30vw;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.tooltip-container ul {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+ul li {
+  margin: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.home-tooltip,
+.projects-tooltip,
+.blog-tooltip {
+  background-color: black;
+  color: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  position: absolute;
+  font-size: 18px;
+  display: none;
+}
+
+.home-tooltip {
+  top: 0%;
+  left: 20%;
+}
+
+.projects-tooltip {
+  top: 0%;
+  left: 28%;
+}
+
+.blog-tooltip {
+  top:0%;
+  left: 58%;
+}
+
+.home-tooltip::before,
+.projects-tooltip::before,
+.blog-tooltip::before {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(180deg);
+  content: '';
+  position: absolute;
+  background-color: black;
+  width: 30px;
+  height: 14px;
+}
+
+.home-tooltip::before {
+  top: 100%;
+  left: 39%;
+}
+
+.projects-tooltip::before {
+  top: 100%;
+  left: 45%;
+}
+
+.blog-tooltip::before {
+  top: 100%;
+  left: 39%;
+}
+
+.home-link:hover~.home-tooltip,
+.projects-link:hover~.projects-tooltip,
+.blog-link:hover~.blog-tooltip {
+  display: block;
+}
